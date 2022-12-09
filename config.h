@@ -5,19 +5,12 @@
  * lines is the number of lines scrolled up or down.
  * If lines is negative, it's the fraction of the terminal size.
  */
-
-/* struct rule rules[] = { */
-/* 	/\* sequence     event        lines *\/ */
-/* 	{"\033[5;2~",   SCROLL_UP,   -1},	/\* [Shift] + [PageUP] *\/ */
-/* 	{"\033[6;2~",   SCROLL_DOWN, -1},	/\* [Shift] + [PageDown] *\/ */
-/* 	/\* mouse binding shadows ^E and ^Y, so it's disabled by default *\/ */
-/* 	//{"\031",        SCROLL_UP,    1},	/\* mouse wheel up *\/ */
-/* 	//{"\005",        SCROLL_DOWN,  1},	/\* mouse wheel Down *\/ */
-/* }; */
 struct rule rules[] = {
 	/* sequence     event        lines */
-	{"\033[5;2~",   SCROLL_UP,   -1},       /* [Shift] + [PageUP] */
-	{"\033[6;2~",   SCROLL_DOWN, -1},       /* [Shift] + [PageDown] */
-	{"\031",        SCROLL_UP,    1},       /* mouse wheel up */
-	{"\033[1;6B",        SCROLL_DOWN,  1},       /* mouse wheel Down */
+	{"\ek",   SCROLL_UP,   5},       /* [Alt] + k ( "\e" = [ESC] = "\033" = "^[" ) */
+	{"\ej",   SCROLL_DOWN, 5},       /* [Alt] + j ( "\e" = [ESC] = "\033" = "^[" ) */
+	{"\eK",   SCROLL_UP,   -1},       /* [Alt] + k ( "\e" = [ESC] = "\033" = "^[" ) */
+	{"\eJ",   SCROLL_DOWN, -1},       /* [Alt] + j ( "\e" = [ESC] = "\033" = "^[" ) */
+	{"\031",  SCROLL_UP,    1},       /* mouse wheel up ( "^Y" = "\031" ) */
+	{"\005",  SCROLL_DOWN,  1},       /* mouse wheel Down ( "^E" = "\005" ) */
 };
