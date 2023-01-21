@@ -7,10 +7,10 @@
  */
 struct rule rules[] = {
 	/* sequence     event        lines */
-	{"\ek",   SCROLL_UP,   5},       /* [Alt] + k ( "\e" = [ESC] = "\033" = "^[" ) */
-	{"\ej",   SCROLL_DOWN, 5},       /* [Alt] + j ( "\e" = [ESC] = "\033" = "^[" ) */
-	{"\eK",   SCROLL_UP,   -1},       /* [Alt] + k ( "\e" = [ESC] = "\033" = "^[" ) */
-	{"\eJ",   SCROLL_DOWN, -1},       /* [Alt] + j ( "\e" = [ESC] = "\033" = "^[" ) */
+	{"\ek",   SCROLL_UP,   1},       /* [Alt] + k ( "\e" = [ESC] = "\033" = "^[" ) */
+	{"\ej",   SCROLL_DOWN, 1},       /* [Alt] + j ( "\e" = [ESC] = "\033" = "^[" ) */
+	{"\eK",   SCROLL_UP,   -1},       /* [Alt] + K
+	{"\eJ",   SCROLL_DOWN, -1},       /* [Alt] + J
 	{"\031",  SCROLL_UP,    1},       /* mouse wheel up ( "^Y" = "\031" ) */
 	{"\005",  SCROLL_DOWN,  1},       /* mouse wheel Down ( "^E" = "\005" ) */
 };
